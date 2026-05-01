@@ -79,8 +79,11 @@ export async function POST(
     if (response.ok) {
       // Bust the signatures cache so the homepage list re-fetches the
       // updated set of signers on the next render — for everyone, not
-      // just the user who just signed.
-      revalidateTag(SIGNATURES_TAG);
+      // just the user who just signed. `expire: 0` is the route-handler
+      // pattern for immediate expiration (per Next 16's revalidateTag
+      // docs: "For webhooks or third-party services that need immediate
+      // expiration, you can pass { expire: 0 } as the second argument").
+      revalidateTag(SIGNATURES_TAG, { expire: 0 });
 
       return NextResponse.json(
         {
