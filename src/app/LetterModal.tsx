@@ -106,7 +106,7 @@ function LetterModalInner() {
       role="dialog"
       aria-modal="true"
       aria-label="Sign the letter to Mayor Mamdani"
-      className="fixed inset-0 z-[100] flex items-stretch justify-center bg-white/95 p-4 md:items-center md:p-8"
+      className="fixed inset-0 z-[100] flex items-stretch justify-center bg-white/70 p-4 md:items-center md:p-8"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}

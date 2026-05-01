@@ -46,22 +46,22 @@ export default function Home() {
       <section className="bg-brand-navy">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 pb-6 pt-20">
           <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" />
-          <div className="-mt-2 flex w-full items-end gap-4 md:-mt-12 lg:-mt-24">
+          <div className="relative -mt-2 w-full md:-mt-12 lg:-mt-24">
             <img
               src="/assets/now-is-the-time.svg"
               alt="NOW is the time to reimagine our city's relationship with technology."
-              className="min-w-0 basis-[65%]"
+              className="block w-[75%]"
             />
             <Link
               href="?letter=open"
               scroll={false}
               aria-label="Read our letter"
-              className="min-w-0 basis-[35%] translate-y-2 self-end md:translate-y-4 lg:translate-y-8"
+              className="absolute -bottom-6 right-0 block w-[45%] -rotate-3 md:-bottom-8 md:w-[38%] lg:-bottom-12 lg:w-[35%]"
             >
               <img
                 src="/assets/read-our-letter.svg"
                 alt="Read our letter"
-                className="w-full"
+                className="block w-full"
               />
             </Link>
           </div>
