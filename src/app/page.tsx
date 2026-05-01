@@ -1,6 +1,26 @@
+import Link from "next/link";
+
+import partnersData from "@/data/partners.json";
 import sliderData from "@/data/slider.json";
 import FitText from "./FitText";
 import PartnersStrip from "./PartnersStrip";
+import Signatures from "./Signatures";
+
+function partnerLinks(): React.ReactNode {
+  const ps = partnersData.partners;
+  return ps.map((p, i) => {
+    const sep =
+      i === 0 ? "" : i === ps.length - 1 ? " and " : ", ";
+    return (
+      <span key={p.name}>
+        {sep}
+        <a href={p.url} target="_blank" rel="noopener noreferrer">
+          {p.name}
+        </a>
+      </span>
+    );
+  });
+}
 
 export default function Home() {
   return (
@@ -13,23 +33,38 @@ export default function Home() {
           >
             Home
           </a>
-          <a
-            href="#sign"
+          <Link
+            href="?letter=open"
+            scroll={false}
             className="whitespace-nowrap rounded-full bg-white px-4 py-1 font-serif text-sm font-bold tracking-tighter text-black"
           >
             Sign The Letter
-          </a>
+          </Link>
         </div>
       </header>
 
       <section className="bg-brand-navy">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 pb-6 pt-20">
           <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" />
-          <img
-            src="/assets/now-is-the-time.svg"
-            alt="NOW is the time to reimagine our city's relationship with technology."
-            className="-mt-2 w-full max-w-[900px] md:-mt-12 lg:-mt-24"
-          />
+          <div className="-mt-2 flex w-full items-end gap-4 md:-mt-12 lg:-mt-24">
+            <img
+              src="/assets/now-is-the-time.svg"
+              alt="NOW is the time to reimagine our city's relationship with technology."
+              className="min-w-0 basis-[65%]"
+            />
+            <Link
+              href="?letter=open"
+              scroll={false}
+              aria-label="Read our letter"
+              className="min-w-0 basis-[35%] translate-y-2 self-end md:translate-y-4 lg:translate-y-8"
+            >
+              <img
+                src="/assets/read-our-letter.svg"
+                alt="Read our letter"
+                className="w-full"
+              />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -59,7 +94,7 @@ export default function Home() {
             className="w-full"
           />
           <FitText className="font-display tracking-tight">
-            EMAIL US:{" "}
+            PLS EMAIL US:{" "}
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
             </a>
@@ -106,7 +141,7 @@ export default function Home() {
               <div className="mb-2 font-bold text-brand-red">
                 {item.title}
               </div>
-              <p className="text-sm leading-snug">{item.body}</p>
+              <p className="text-sm font-bold leading-snug tracking-[-0.04em]">{item.body}</p>
               <a
                 href={item.source}
                 target="_blank"
@@ -142,16 +177,28 @@ export default function Home() {
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
           <div className="relative mx-auto max-w-[700px]">
             <img
+              src="/assets/taxi.svg"
+              alt=""
+              aria-hidden
+              className="absolute -left-8 -top-12 z-10 w-28"
+            />
+            <img
               src="/assets/cat.svg"
               alt=""
               aria-hidden
               className="absolute -right-8 -top-12 z-10 w-28"
             />
             <img
-              src="/assets/rat.svg"
+              src="/assets/pizza.svg"
               alt=""
               aria-hidden
               className="absolute -bottom-10 -left-8 z-10 w-24"
+            />
+            <img
+              src="/assets/rat.svg"
+              alt=""
+              aria-hidden
+              className="absolute -bottom-10 -right-8 z-10 w-24"
             />
             <ol className="relative space-y-2 border-8 border-black bg-white p-4 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] text-black md:p-8 md:text-[25pt] md:leading-[28pt]">
               {[
@@ -196,13 +243,17 @@ export default function Home() {
           <p className="mx-auto max-w-[700px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
             These recommendations came out of an open-format participatory
             event called{" "}
-            <em className="font-sans italic underline">
+            <a
+              href="https://www.instagram.com/p/DVMRkwugaCz/?img_index=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans italic"
+            >
               Open Assembly: A Prompt Towards Civic Engagement
-            </em>{" "}
+            </a>{" "}
             held at Index Greenpoint on March 10th, 2026, co-presented with a
             committee of leading organizations in the civic technology field
-            including Mozilla Foundation, Polis, RadicalxChange, Metagov and
-            New_ Public.
+            including {partnerLinks()}.
           </p>
 
           <div className="mx-auto mt-8 flex aspect-video w-full max-w-[1100px] items-center justify-center bg-black text-white/70">
@@ -216,9 +267,8 @@ export default function Home() {
           />
           <div className="mx-auto mt-3 max-w-[1100px]">
             <FitText className="font-display tracking-tight">
-              <a href="mailto:hello@heymamdani.nyc" className="underline">
-                HELLO@HEYMAMDANI.NYC
-              </a>
+              PLS EMAIL US:{" "}
+              <a href="mailto:hello@heymamdani.nyc">HELLO@HEYMAMDANI.NYC</a>
             </FitText>
           </div>
 
@@ -227,11 +277,14 @@ export default function Home() {
       </section>
 
       <footer className="bg-brand-navy text-white">
-        <div className="mx-auto w-full max-w-[1200px] px-6 py-12 text-center">
-          <p className="font-serif text-3xl font-bold leading-[1.1] tracking-tighter md:text-5xl lg:text-7xl">
+        <div className="mx-auto w-full max-w-[1200px] px-6 pb-6 pt-12 text-center">
+          <p className="font-serif text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl lg:text-7xl">
             If you are not Mamdani,
             <br />
-            Please <span className="underline">Sign The Letter</span>
+            Please{" "}
+            <Link href="?letter=open" scroll={false} className="underline">
+              Sign The Letter
+            </Link>
           </p>
           <div className="mt-8 flex items-center justify-center gap-3 md:gap-4">
             <p className="font-serif text-sm font-bold leading-[1.1] tracking-tight md:text-lg lg:text-xl">
@@ -248,6 +301,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <Signatures />
     </div>
   );
 }
