@@ -1,6 +1,9 @@
 import { randomUUID } from "crypto";
 
+import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
+
+import { SIGNATURES_TAG } from "@/lib/signatures";
 
 interface SignResponse {
   success: boolean;
@@ -74,6 +77,11 @@ export async function POST(
     });
 
     if (response.ok) {
+      // Bust the signatures cache so the homepage list re-fetches the
+      // updated set of signers on the next render — for everyone, not
+      // just the user who just signed.
+      revalidateTag(SIGNATURES_TAG);
+
       return NextResponse.json(
         {
           success: true,

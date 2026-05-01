@@ -45,7 +45,7 @@ export default function Home() {
 
       <section className="bg-brand-navy">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 pb-6 pt-20">
-          <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" />
+          <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" fetchPriority="high" decoding="async" />
           <div className="relative -mt-2 w-full md:-mt-12 lg:-mt-24">
             <img
               src="/assets/now-is-the-time.svg"
@@ -81,7 +81,10 @@ export default function Home() {
           <img
             src="/assets/portrait.svg"
             alt=""
+            aria-hidden
             className="h-32 w-auto shrink-0 self-end sm:h-44 md:h-56 lg:h-72"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -92,6 +95,8 @@ export default function Home() {
             src="/assets/hey-zohran.svg"
             alt="Hey Zohran, we want to help make civic technology awesome."
             className="w-full"
+            loading="lazy"
+            decoding="async"
           />
           <FitText className="font-display font-black tracking-tight">
             PLS EMAIL US:{" "}
@@ -109,11 +114,15 @@ export default function Home() {
             src="/assets/infra-lagging-behind.svg"
             alt="NYC infra is lagging behind"
             className="w-full"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src="/assets/world-is-changing-fast.svg"
             alt="The world is changing fast"
             className="w-full"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -180,24 +189,32 @@ export default function Home() {
               src="/assets/taxi.svg"
               alt=""
               aria-hidden
+              loading="lazy"
+              decoding="async"
               className="absolute -left-8 -top-12 z-10 w-28"
             />
             <img
               src="/assets/cat.svg"
               alt=""
               aria-hidden
+              loading="lazy"
+              decoding="async"
               className="absolute -right-8 -top-12 z-10 w-28"
             />
             <img
               src="/assets/pizza.svg"
               alt=""
               aria-hidden
+              loading="lazy"
+              decoding="async"
               className="absolute -bottom-10 -left-8 z-10 w-24"
             />
             <img
               src="/assets/rat.svg"
               alt=""
               aria-hidden
+              loading="lazy"
+              decoding="async"
               className="absolute -bottom-10 -right-8 z-10 w-24"
             />
             <ol className="relative space-y-2 border-8 border-black bg-white p-4 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] text-black md:p-8 md:text-[25pt] md:leading-[28pt]">
@@ -264,6 +281,8 @@ export default function Home() {
             src="/assets/we-can-help.svg"
             alt="We can help"
             className="mx-auto mt-10 w-full max-w-[1100px]"
+            loading="lazy"
+            decoding="async"
           />
           <div className="mx-auto mt-3 max-w-[1100px]">
             <FitText className="font-display font-black tracking-tight">
@@ -296,6 +315,8 @@ export default function Home() {
               src="/assets/apple.svg"
               alt=""
               aria-hidden
+              loading="lazy"
+              decoding="async"
               className="h-16 w-auto md:h-24 lg:h-28"
             />
           </div>

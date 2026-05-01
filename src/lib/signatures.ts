@@ -14,13 +14,21 @@ interface StacksContact {
   };
 }
 
+// Cache tag used to invalidate the signatures fetch from elsewhere
+// (e.g. the /api/sign route after a successful submission).
+export const SIGNATURES_TAG = "signatures";
+
 export async function fetchSignatures(): Promise<Signature[]> {
   try {
     const res = await fetch(
       "https://stacks.garden3d.net/api/contacts?source=g3d:hey_mamdani",
       {
         headers: { "X-Api-Key": process.env.STACKS_API_KEY ?? "" },
-        cache: "no-store",
+        // Cache aggressively for fast page renders; we'll bust this tag
+        // from the sign route the moment a new signature is added. The
+        // 5-minute revalidate is a safety net in case the tag flush is
+        // ever skipped (e.g. a stacks write that bypasses /api/sign).
+        next: { tags: [SIGNATURES_TAG], revalidate: 300 },
       },
     );
 
