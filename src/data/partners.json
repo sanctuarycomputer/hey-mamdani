@@ -1,0 +1,40 @@
+{
+  "partners": [
+    {
+      "name": "Mozilla Foundation",
+      "url": "https://foundation.mozilla.org",
+      "logo": "/partners/mozilla-foundation.svg"
+    },
+    {
+      "name": "Polis",
+      "url": "https://pol.is",
+      "logo": "/partners/polis.svg"
+    },
+    {
+      "name": "RadicalxChange",
+      "url": "https://www.radicalxchange.org",
+      "logo": "/partners/radicalxchange.svg"
+    },
+    {
+      "name": "Metagov",
+      "url": "https://metagov.org",
+      "logo": "/partners/metagov.svg"
+    },
+    {
+      "name": "New Public",
+      "url": "https://newpublic.org",
+      "logo": "/partners/new-public.svg",
+      "scale": 0.7
+    },
+    {
+      "name": "Garden3D",
+      "url": "https://garden3d.net",
+      "logo": "/partners/garden3d.svg"
+    },
+    {
+      "name": "DecentralPark",
+      "url": "https://decentralpark.nyc",
+      "logo": "/partners/decentralpark.svg"
+    }
+  ]
+}

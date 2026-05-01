@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "title": "311 Follow-Through",
+      "body": "Only 28% of New Yorkers are satisfied with how the city follows through when they call 311.",
+      "source": "https://reports.jehiah.cz/311_report_card/"
+    },
+    {
+      "title": "Home Internet Gap",
+      "body": "500,000 NYC households have no home internet. In the Bronx, the share without broadband has gotten worse since the pandemic - up from 18% to 22%.",
+      "source": "https://gothamist.com/news/its-2025-but-a-quarter-of-bronx-families-dont-have-broadband-internet-at-home"
+    },
+    {
+      "title": "OMNY Tap-To-Pay",
+      "body": "3 out of 4 OMNY riders report problems with the new tap-to-pay system - failed taps, late charges, long customer-service waits. The MetroCard is being retired at the end of 2025 anyway.",
+      "source": "https://pcac.org/report/omnysurveyresults/"
+    },
+    {
+      "title": "NYCHA Tenant App",
+      "body": "The NYCHA tenant app hasn't been updated in two years. It won't run on newer Android phones. 339,000 public housing residents are the ones locked out.",
+      "source": "https://play.google.com/store/apps/details?id=info.NYCHA.Mobile.MyNYCHA"
+    },
+    {
+      "title": "HRA Benefits Portal",
+      "body": "HRA's benefits portal - used by New Yorkers applying for SNAP and emergency cash - doesn't confirm applications went through, so people submit twice, get rejected as duplicates, and wait longer for food.",
+      "source": "https://council.nyc.gov/press/2025/12/11/3026/"
+    },
+    {
+      "title": "MyCity AI Chatbot",
+      "body": "Mayor Adam's MyCity AI chatbot told landlords they could discriminate against Section 8 tenants and told bosses they could take workers' tips. The city knew since March 2024 and kept it online until January 2026.",
+      "source": "https://themarkup.org/artificial-intelligence/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law"
+    },
+    {
+      "title": "School Chromebooks",
+      "body": "Of $320 million spent on Chromebooks for NYC public school students, only 32% have actually made it into students' hands.",
+      "source": "https://nysfocus.com/2025/12/22/eric-adams-school-chromebooks-contract"
+    },
+    {
+      "title": "Housing Court E-Filing",
+      "body": "Housing court mandates e-filing in February 2026. The tenants most likely to face eviction without a lawyer often lack the computer access to use it.",
+      "source": "https://www.nycbar.org/reports/recommendations-on-implementation-of-e-filing-in-nyc-civil-and-housing-courts/"
+    }
+  ]
+}
