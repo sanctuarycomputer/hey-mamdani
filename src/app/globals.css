@@ -9,6 +9,27 @@
   --font-sans: Arial, Helvetica, sans-serif;
   --font-serif: "Times New Roman", Times, serif;
   --font-display: "Arial Black", Arial, sans-serif;
+
+  --animate-wiggle: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  40% {
+    transform: rotate(6deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
 }
 
 body {

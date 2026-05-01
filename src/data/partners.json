@@ -35,6 +35,11 @@
       "name": "DecentralPark",
       "url": "https://decentralpark.nyc",
       "logo": "/partners/decentralpark.svg"
+    },
+    {
+      "name": "NYC Mesh",
+      "url": "https://nycmesh.net",
+      "logo": "/partners/nyc-mesh.svg"
     }
   ]
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import partnersData from "@/data/partners.json";
 import sliderData from "@/data/slider.json";
 import FitText from "./FitText";
+import Nav from "./Nav";
 import PartnersStrip from "./PartnersStrip";
 import Signatures from "./Signatures";
 
@@ -25,25 +26,9 @@ function partnerLinks(): React.ReactNode {
 export default function Home() {
   return (
     <div className="flex w-full flex-col">
-      <header className="fixed inset-x-0 top-0 z-50 bg-transparent text-white">
-        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-end gap-2 px-6 py-3">
-          <a
-            href="/"
-            className="whitespace-nowrap rounded-full bg-black px-4 py-1 text-sm font-bold text-white"
-          >
-            Home
-          </a>
-          <Link
-            href="?letter=open"
-            scroll={false}
-            className="whitespace-nowrap rounded-full bg-white px-4 py-1 font-serif text-sm font-bold tracking-tighter text-black"
-          >
-            Sign The Letter
-          </Link>
-        </div>
-      </header>
+      <Nav />
 
-      <section className="bg-brand-navy">
+      <section id="hero" className="bg-brand-navy">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 pb-6 pt-20">
           <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" fetchPriority="high" decoding="async" />
           <div className="relative -mt-2 w-full md:-mt-12 lg:-mt-24">
