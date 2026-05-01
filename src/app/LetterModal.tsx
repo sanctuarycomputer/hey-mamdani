@@ -3,7 +3,23 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 
+import partnersData from "@/data/partners.json";
 import FitText from "./FitText";
+
+// Plain-text comma-and list of partner names (no links inside the letter).
+function partnerNames(): string {
+  const ps = partnersData.partners;
+  if (ps.length === 0) return "";
+  if (ps.length === 1) return ps[0].name;
+  return (
+    ps
+      .slice(0, -1)
+      .map((p) => p.name)
+      .join(", ") +
+    " and " +
+    ps[ps.length - 1].name
+  );
+}
 
 const demands = [
   { label: "Build a Public Internet" },
@@ -165,8 +181,7 @@ function LetterModalInner() {
                 </em>{" "}
                 held at Index Greenpoint on March 10th, 2026, co-presented
                 with a committee of leading organizations in the civic
-                technology field including Mozilla Foundation, Polis,
-                RadicalxChange, Metagov and New_ Public.
+                technology field including {partnerNames()}.
               </p>
 
               <h2 className="mt-8 font-serif text-3xl font-bold leading-tight tracking-tighter md:text-4xl">
@@ -222,7 +237,7 @@ function LetterModalInner() {
                   </a>
                 </p>
                 <img
-                  src="/assets/apple.svg"
+                  src="/assets/apple-outline.svg"
                   alt=""
                   aria-hidden
                   className="h-16 w-auto"
@@ -330,7 +345,7 @@ function LetterModalInner() {
                 Your signature has been added to the letter.
               </p>
               <img
-                src="/assets/apple.svg"
+                src="/assets/apple-outline.svg"
                 alt=""
                 aria-hidden
                 className="mt-8 h-20 w-auto"
