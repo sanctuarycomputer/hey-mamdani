@@ -93,7 +93,7 @@ export default function Home() {
             alt="Hey Zohran, we want to help make civic technology awesome."
             className="w-full"
           />
-          <FitText className="font-display tracking-tight">
+          <FitText className="font-display font-black tracking-tight">
             PLS EMAIL US:{" "}
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
@@ -148,7 +148,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-auto pt-4 text-xs text-brand-red underline"
               >
-                Source ↗
+                Source {"↗︎"}
               </a>
             </div>
           ))}
@@ -226,7 +226,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="underline"
                     >
-                      {item.label} ↗
+                      {item.label} {"↗︎"}
                     </a>
                   ) : (
                     item.label
@@ -266,7 +266,7 @@ export default function Home() {
             className="mx-auto mt-10 w-full max-w-[1100px]"
           />
           <div className="mx-auto mt-3 max-w-[1100px]">
-            <FitText className="font-display tracking-tight">
+            <FitText className="font-display font-black tracking-tight">
               PLS EMAIL US:{" "}
               <a href="mailto:hello@heymamdani.nyc">HELLO@HEYMAMDANI.NYC</a>
             </FitText>

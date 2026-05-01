@@ -186,7 +186,7 @@ function LetterModalInner() {
                         rel="noopener noreferrer"
                         className="underline"
                       >
-                        {item.label} ↗
+                        {item.label} {"↗︎"}
                       </a>
                     ) : (
                       item.label
