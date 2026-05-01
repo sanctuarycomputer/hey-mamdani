@@ -182,7 +182,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:177px_auto] bg-repeat py-10">
+      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:400px_auto] bg-repeat py-10">
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
           <div className="relative mx-auto max-w-[700px]">
             <img
