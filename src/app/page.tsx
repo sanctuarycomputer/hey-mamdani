@@ -2,10 +2,13 @@ import Link from "next/link";
 
 import partnersData from "@/data/partners.json";
 import sliderData from "@/data/slider.json";
+import { loadInlineSvg } from "@/lib/inline-svg";
 import FitText from "./FitText";
 import Nav from "./Nav";
 import PartnersStrip from "./PartnersStrip";
 import Signatures from "./Signatures";
+
+const weCanHelpSvg = loadInlineSvg("/assets/we-can-help-big.svg");
 
 function partnerLinks(): React.ReactNode {
   const ps = partnersData.partners;
@@ -31,25 +34,11 @@ export default function Home() {
       <section id="hero" className="bg-brand-navy">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 pb-6 pt-20">
           <img src="/assets/logo.svg" alt="Hey Mamdani!" className="relative z-10 w-full max-w-[1100px]" fetchPriority="high" decoding="async" />
-          <div className="relative -mt-2 w-full md:-mt-12 lg:-mt-24">
-            <img
-              src="/assets/now-is-the-time.svg"
-              alt="NOW is the time to reimagine our city's relationship with technology."
-              className="block w-[75%]"
-            />
-            <Link
-              href="?letter=open"
-              scroll={false}
-              aria-label="Read our letter"
-              className="absolute -bottom-6 right-0 block w-[45%] -rotate-3 md:-bottom-8 md:w-[38%] lg:-bottom-12 lg:w-[35%]"
-            >
-              <img
-                src="/assets/read-our-letter.svg"
-                alt="Read our letter"
-                className="block w-full"
-              />
-            </Link>
-          </div>
+          <img
+            src="/assets/now-is-the-time.svg"
+            alt="NOW is the time to reimagine our city's relationship with technology."
+            className="-mt-2 w-full max-w-[900px] md:-mt-12 lg:-mt-24"
+          />
         </div>
       </section>
 
@@ -74,22 +63,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-brand-navy">
-        <div className="mx-auto w-full max-w-[1200px] px-6 py-10 text-center">
+      <section className="bg-brand-lavender text-brand-navy">
+        <div className="mx-auto w-full max-w-[1200px] px-6 py-10">
           <img
-            src="/assets/hey-zohran.svg"
+            src="/assets/hey-zohran-big.svg"
             alt="Hey Zohran, we want to help make civic technology awesome."
-            className="w-full"
+            className="block w-full"
             loading="lazy"
             decoding="async"
           />
-          <FitText className="font-display font-black tracking-tight">
-            PLS EMAIL US:{" "}
+          <FitText className="block font-display font-black tracking-tight">
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
             </a>
           </FitText>
-          <PartnersStrip className="mt-6 text-brand-navy" />
+          <PartnersStrip className="mt-8 text-brand-navy" />
         </div>
       </section>
 
@@ -113,7 +101,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white text-black">
-        <div className="mx-auto w-full max-w-[700px] px-6 py-6 text-center">
+        <div className="mx-auto w-full max-w-[1100px] px-6 py-6 text-center">
           <p className="text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:text-[25pt] md:leading-[28pt]">
             Your campaign ran on a vision of a city that works for every New
             Yorker. But the digital layer underneath that promise is in rough
@@ -123,24 +111,26 @@ export default function Home() {
       </section>
 
       <section className="bg-white pb-2 pt-6">
-        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 [scroll-padding-inline:1.5rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 [padding-inline:max(1.5rem,calc((100vw-1100px)/2+1.5rem))] [scroll-padding-inline-start:max(1.5rem,calc((100vw-1100px)/2+1.5rem))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {sliderData.items.map((item, i) => (
             <div
               key={item.title}
-              className="flex w-[85vw] max-w-[320px] shrink-0 snap-start flex-col border-8 border-brand-red bg-white p-5 text-black"
+              className="flex w-[85vw] max-w-[400px] shrink-0 snap-start flex-col border-8 border-brand-red bg-white p-5 text-black md:p-6"
             >
-              <div className="font-display text-3xl text-brand-red">
+              <div className="text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] text-brand-red md:text-[25pt] md:leading-[28pt]">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="mb-2 font-bold text-brand-red">
+              <div className="mb-3 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] text-brand-red md:text-[25pt] md:leading-[28pt]">
                 {item.title}
               </div>
-              <p className="text-sm font-bold leading-snug tracking-[-0.04em]">{item.body}</p>
+              <p className="text-base font-bold leading-snug tracking-[-0.04em] md:text-lg">
+                {item.body}
+              </p>
               <a
                 href={item.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto pt-4 text-xs text-brand-red underline"
+                className="mt-auto pt-4 text-sm text-brand-red underline"
               >
                 Source {"↗︎"}
               </a>
@@ -150,7 +140,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white text-black">
-        <div className="mx-auto w-full max-w-[700px] space-y-6 px-6 py-8 text-center text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:space-y-8 md:py-10 md:text-[25pt] md:leading-[28pt]">
+        <div className="mx-auto w-full max-w-[1100px] space-y-6 px-6 py-8 text-center text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:space-y-8 md:py-10 md:text-[25pt] md:leading-[28pt]">
           <p>
             Free buses, frozen rents and an office of mass engagement all have
             to run through this layer.{" "}
@@ -167,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:400px_auto] bg-repeat py-10">
+      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:400px_auto] bg-repeat py-40 md:py-56">
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
           <div className="relative mx-auto max-w-[700px]">
             <img
@@ -176,7 +166,7 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -left-8 -top-12 z-10 w-28"
+              className="absolute -top-20 left-[12%] z-10 w-32 -rotate-12"
             />
             <img
               src="/assets/cat.svg"
@@ -184,7 +174,7 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -right-8 -top-12 z-10 w-28"
+              className="absolute -right-12 top-[8%] z-10 w-32 rotate-6"
             />
             <img
               src="/assets/pizza.svg"
@@ -192,7 +182,7 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -bottom-10 -left-8 z-10 w-24"
+              className="absolute -bottom-14 left-[40%] z-10 w-28 rotate-6"
             />
             <img
               src="/assets/rat.svg"
@@ -200,49 +190,54 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -bottom-10 -right-8 z-10 w-24"
+              className="absolute -left-12 bottom-[10%] z-10 w-28 -rotate-6"
             />
-            <ol className="relative space-y-2 border-8 border-black bg-white p-4 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] text-black md:p-8 md:text-[25pt] md:leading-[28pt]">
-              {[
-                { label: "Build a Public Internet" },
-                { label: "Free Internet for All", href: "https://internetforall.nyc/" },
-                { label: "City-Owned Payment Rails" },
-                { label: "Real-Time Housing Data" },
-                { label: "Improve 311" },
-                { label: "Curb AI Expansion" },
-                { label: "Public Comment on Every Bill" },
-                { label: "Real-Time Budget Tracking" },
-                { label: "Office of AI Accountability" },
-                { label: "Opt Out of Biometric Surveillance" },
-                { label: "Regulate Self-Driving Taxis" },
-                { label: "Food Rescue Platform" },
-              ].map((item, i) => (
-                <li key={item.label} className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-sm text-white">
-                    {i + 1}
-                  </span>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline"
-                    >
-                      {item.label} {"↗︎"}
-                    </a>
-                  ) : (
-                    item.label
-                  )}
-                </li>
-              ))}
-            </ol>
+            <div className="relative border-8 border-black bg-white p-4 text-black md:p-8">
+              <h2 className="whitespace-nowrap text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl lg:text-7xl">
+                NYC Should&hellip;
+              </h2>
+              <ol className="mt-3 space-y-2 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:mt-4 md:text-[25pt] md:leading-[28pt]">
+                {[
+                  { label: "Build a Public Internet" },
+                  { label: "Free Internet for All", href: "https://internetforall.nyc/" },
+                  { label: "City-Owned Payment Rails" },
+                  { label: "Real-Time Housing Data" },
+                  { label: "Improve 311" },
+                  { label: "Curb AI Expansion" },
+                  { label: "Public Comment on Every Bill" },
+                  { label: "Real-Time Budget Tracking" },
+                  { label: "Office of AI Accountability" },
+                  { label: "Opt Out of Biometric Surveillance" },
+                  { label: "Regulate Self-Driving Taxis" },
+                  { label: "Food Rescue Platform" },
+                ].map((item, i) => (
+                  <li key={item.label} className="flex items-center gap-3">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-sm text-white">
+                      {i + 1}
+                    </span>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                      >
+                        {item.label} {"↗︎"}
+                      </a>
+                    ) : (
+                      item.label
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-brand-yellow text-black">
         <div className="mx-auto w-full max-w-[1200px] px-6 py-10 text-center">
-          <p className="mx-auto max-w-[700px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
+          <p className="mx-auto max-w-[1100px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
             These recommendations came out of an open-format participatory
             event called{" "}
             <a
@@ -261,28 +256,38 @@ export default function Home() {
           <div className="mx-auto mt-8 flex aspect-video w-full max-w-[1100px] items-center justify-center bg-black text-white/70">
             VIDEO
           </div>
+        </div>
+      </section>
 
-          <img
-            src="/assets/we-can-help.svg"
-            alt="We can help"
-            className="mx-auto mt-10 w-full max-w-[1100px]"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="mx-auto mt-3 max-w-[1100px]">
-            <FitText className="font-display font-black tracking-tight">
-              PLS EMAIL US:{" "}
-              <a href="mailto:hello@heymamdani.nyc">HELLO@HEYMAMDANI.NYC</a>
-            </FitText>
-          </div>
-
-          <PartnersStrip className="mt-6 text-black" />
+      <section className="bg-black text-brand-yellow">
+        <div className="mx-auto w-full max-w-[1200px] px-6 py-10 text-center">
+          {weCanHelpSvg ? (
+            <span
+              aria-label="We can help"
+              className="block w-full [&>svg]:block [&>svg]:w-full"
+              dangerouslySetInnerHTML={{ __html: weCanHelpSvg }}
+            />
+          ) : (
+            <img
+              src="/assets/we-can-help-big.svg"
+              alt="We can help"
+              className="block w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <FitText className="block font-display font-black tracking-tight">
+            <a href="mailto:hello@heymamdani.nyc" className="underline">
+              HELLO@HEYMAMDANI.NYC
+            </a>
+          </FitText>
+          <PartnersStrip className="mt-8 text-brand-yellow" />
         </div>
       </section>
 
       <footer className="bg-brand-navy text-white">
         <div className="mx-auto w-full max-w-[1200px] px-6 pb-6 pt-12 text-center">
-          <p className="font-serif text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl lg:text-7xl">
+          <p className="font-serif text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl lg:text-7xl xl:text-8xl">
             If you are not Mamdani,
             <br />
             Please{" "}
