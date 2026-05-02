@@ -9,6 +9,7 @@ const siteUrl =
 const title = "Hey Mamdani!";
 const description =
   "NOW is the time to reimagine our city's relationship with technology.";
+const shareImage = "/share.jpg?v=2";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,13 +46,13 @@ export const metadata: Metadata = {
     description,
     siteName: title,
     locale: "en_US",
-    images: [{ url: "/share.jpg", width: 1200, height: 627, alt: title }],
+    images: [{ url: shareImage, width: 1200, height: 627, alt: title }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/share.jpg"],
+    images: [shareImage],
   },
   robots: {
     index: true,
@@ -128,7 +129,7 @@ const jsonLd = {
       inLanguage: "en-US",
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${siteUrl}/share.jpg`,
+        url: `${siteUrl}${shareImage}`,
         width: 1200,
         height: 627,
       },
