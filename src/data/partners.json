@@ -3,43 +3,51 @@
     {
       "name": "Mozilla Foundation",
       "url": "https://foundation.mozilla.org",
-      "logo": "/partners/mozilla-foundation.svg"
+      "logo": "/partners/mozilla-foundation.svg",
+      "include": false
     },
     {
       "name": "Polis",
       "url": "https://pol.is",
-      "logo": "/partners/polis.svg"
+      "logo": "/partners/polis.svg",
+      "include": false
     },
     {
       "name": "RadicalxChange",
       "url": "https://www.radicalxchange.org",
-      "logo": "/partners/radicalxchange.svg"
+      "logo": "/partners/radicalxchange.svg",
+      "include": false
     },
     {
       "name": "Metagov",
       "url": "https://metagov.org",
-      "logo": "/partners/metagov.svg"
+      "logo": "/partners/metagov.svg",
+      "include": false
     },
     {
-      "name": "New Public",
+      "name": "New_ Public",
       "url": "https://newpublic.org",
       "logo": "/partners/new-public.svg",
-      "scale": 0.7
+      "scale": 0.7,
+      "include": false
     },
     {
       "name": "Garden3D",
       "url": "https://garden3d.net",
-      "logo": "/partners/garden3d.svg"
+      "logo": "/partners/garden3d.svg",
+      "include": false
     },
     {
       "name": "DecentralPark",
       "url": "https://decentralpark.nyc",
-      "logo": "/partners/decentralpark.svg"
+      "logo": "/partners/decentralpark.svg",
+      "include": false
     },
     {
       "name": "NYC Mesh",
       "url": "https://nycmesh.net",
-      "logo": "/partners/nyc-mesh.svg"
+      "logo": "/partners/nyc-mesh.svg",
+      "include": false
     }
   ]
 }

@@ -11,7 +11,10 @@ import Signatures from "./Signatures";
 const weCanHelpSvg = loadInlineSvg("/assets/we-can-help-big.svg");
 
 function partnerLinks(): React.ReactNode {
-  const ps = partnersData.partners;
+  const ps = partnersData.partners.filter(
+    (p) => "include" in p && p.include === true,
+  );
+  if (ps.length === 0) return "PARTNERS WILL BE LISTED HERE";
   return ps.map((p, i) => {
     const sep =
       i === 0 ? "" : i === ps.length - 1 ? " and " : ", ";
@@ -48,7 +51,7 @@ export default function Home() {
             <p className="font-serif text-3xl font-bold leading-[1.05] tracking-[-0.06em] md:text-5xl lg:text-6xl">
               &ldquo;Working New Yorkers know what they need to thrive&rdquo;
               <span className="mt-2 block font-serif text-lg italic tracking-[-0.06em] md:mt-3 md:text-2xl lg:text-3xl">
-                Zohran Mamdani
+                Mayor Zohran Kwame Mamdani
               </span>
             </p>
           </div>
@@ -72,7 +75,7 @@ export default function Home() {
             loading="lazy"
             decoding="async"
           />
-          <FitText className="block font-display font-black tracking-tight">
+          <FitText className="block font-display font-black leading-none tracking-tight">
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
             </a>
@@ -157,7 +160,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:400px_auto] bg-repeat py-40 md:py-56">
+      <section className="relative overflow-hidden bg-brand-red bg-[url('/assets/step-and-repeat.svg')] bg-[length:400px_auto] bg-repeat py-20 md:py-28">
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
           <div className="relative mx-auto max-w-[700px]">
             <img
@@ -174,7 +177,7 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -right-12 top-[8%] z-10 w-32 rotate-6"
+              className="absolute -right-6 top-[4%] z-10 w-20 rotate-6 md:-right-12 md:top-[8%] md:w-32"
             />
             <img
               src="/assets/pizza.svg"
@@ -190,10 +193,10 @@ export default function Home() {
               aria-hidden
               loading="lazy"
               decoding="async"
-              className="absolute -left-12 bottom-[10%] z-10 w-28 -rotate-6"
+              className="absolute -left-6 bottom-[6%] z-10 w-20 -rotate-6 md:-left-12 md:bottom-[10%] md:w-28"
             />
             <div className="relative border-8 border-black bg-white p-4 text-black md:p-8">
-              <h2 className="whitespace-nowrap text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl lg:text-7xl">
+              <h2 className="whitespace-nowrap text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl">
                 NYC Should&hellip;
               </h2>
               <ol className="mt-3 space-y-2 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:mt-4 md:text-[25pt] md:leading-[28pt]">
@@ -204,7 +207,7 @@ export default function Home() {
                   { label: "Real-Time Housing Data" },
                   { label: "Improve 311" },
                   { label: "Curb AI Expansion" },
-                  { label: "Public Comment on Every Bill" },
+                  { label: "Public Comments on Every Bill" },
                   { label: "Real-Time Budget Tracking" },
                   { label: "Office of AI Accountability" },
                   { label: "Opt Out of Biometric Surveillance" },
@@ -276,7 +279,7 @@ export default function Home() {
               decoding="async"
             />
           )}
-          <FitText className="block font-display font-black tracking-tight">
+          <FitText className="block font-display font-black leading-none tracking-tight">
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
             </a>

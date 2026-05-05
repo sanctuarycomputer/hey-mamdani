@@ -6,11 +6,27 @@ export default function PartnersStrip({
 }: {
   className?: string;
 }) {
+  const visiblePartners = partnersData.partners.filter(
+    (p) => "include" in p && p.include === true,
+  );
+
+  if (visiblePartners.length === 0) {
+    return (
+      <div
+        className={`mx-auto flex w-full items-center justify-center ${className}`}
+      >
+        <div className="rounded-md border-2 border-dashed border-current/40 px-4 py-3 text-xs opacity-60 md:text-sm">
+          Partner logos will go here.
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`mx-auto flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4 lg:gap-x-10 ${className}`}
     >
-      {partnersData.partners.map((p) => {
+      {visiblePartners.map((p) => {
         const svg = p.logo ? loadInlineSvg(p.logo) : null;
         const scale = "scale" in p && typeof p.scale === "number" ? p.scale : 1;
         return (

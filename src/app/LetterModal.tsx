@@ -8,8 +8,10 @@ import FitText from "./FitText";
 
 // Plain-text comma-and list of partner names (no links inside the letter).
 function partnerNames(): string {
-  const ps = partnersData.partners;
-  if (ps.length === 0) return "";
+  const ps = partnersData.partners.filter(
+    (p) => "include" in p && p.include === true,
+  );
+  if (ps.length === 0) return "PARTNERS WILL BE LISTED HERE";
   if (ps.length === 1) return ps[0].name;
   return (
     ps
@@ -28,7 +30,7 @@ const demands = [
   { label: "Real-Time Housing Data" },
   { label: "Improve 311" },
   { label: "Curb AI Expansion" },
-  { label: "Public Comment on Every Bill" },
+  { label: "Public Comments on Every Bill" },
   { label: "Real-Time Budget Tracking" },
   { label: "Office of AI Accountability" },
   { label: "Opt Out of Biometric Surveillance" },
@@ -131,26 +133,15 @@ function LetterModalInner() {
         className="relative mx-auto flex h-full w-full max-w-[640px] flex-col overflow-hidden border-8 border-brand-navy bg-white md:h-[calc(100dvh-4rem)]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close (X) — letter mode dismisses the modal, other modes step back to letter. */}
-        {mode === "letter" ? (
-          <button
-            type="button"
-            onClick={close}
-            aria-label="Close"
-            className="absolute right-6 top-4 z-10 cursor-pointer font-display text-2xl leading-none text-brand-navy hover:opacity-70"
-          >
-            ✕
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={() => setMode("letter")}
-            aria-label="Back to letter"
-            className="absolute right-6 top-4 z-10 cursor-pointer font-display text-2xl leading-none text-brand-navy hover:opacity-70"
-          >
-            ✕
-          </button>
-        )}
+        {/* Close (X) — form mode steps back to the letter; letter and submitted dismiss the modal. */}
+        <button
+          type="button"
+          onClick={mode === "form" ? () => setMode("letter") : close}
+          aria-label={mode === "form" ? "Back to letter" : "Close"}
+          className="absolute right-6 top-4 z-10 cursor-pointer font-display text-2xl leading-none text-brand-navy hover:opacity-70"
+        >
+          ✕
+        </button>
 
         {mode === "letter" && (
           <>
@@ -171,17 +162,6 @@ function LetterModalInner() {
                 We are submitting a proposal of 12 recommendations for your
                 consideration on how civic technology could improve the
                 everyday lives of New Yorkers.
-              </p>
-
-              <p className="mt-4 font-serif text-base leading-snug">
-                These recommendations came out of an open-format participatory
-                event called{" "}
-                <em className="italic">
-                  Open Assembly: A Prompt Towards Civic Engagement
-                </em>{" "}
-                held at Index Greenpoint on March 10th, 2026, co-presented
-                with a committee of leading organizations in the civic
-                technology field including {partnerNames()}.
               </p>
 
               <h2 className="mt-8 font-serif text-3xl font-bold leading-tight tracking-tighter md:text-4xl">
@@ -209,6 +189,17 @@ function LetterModalInner() {
                   </li>
                 ))}
               </ol>
+
+              <p className="mt-6 font-serif text-base leading-snug">
+                These recommendations came out of an open-format participatory
+                event called{" "}
+                <em className="italic">
+                  Open Assembly: A Prompt Towards Civic Engagement
+                </em>{" "}
+                held at Index Greenpoint on March 10th, 2026, co-presented
+                with a committee of leading organizations in the civic
+                technology field including {partnerNames()}.
+              </p>
 
               <h2 className="mt-8 font-serif text-4xl font-bold leading-[1.05] tracking-tighter md:text-5xl">
                 We want to help improve the lives of New Yorkers.
