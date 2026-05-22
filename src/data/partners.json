@@ -10,13 +10,13 @@
       "name": "Polis",
       "url": "https://pol.is",
       "logo": "/partners/polis.svg",
-      "include": false
+      "include": true
     },
     {
       "name": "RadicalxChange",
       "url": "https://www.radicalxchange.org",
       "logo": "/partners/radicalxchange.svg",
-      "include": false
+      "include": true
     },
     {
       "name": "Metagov",
@@ -35,13 +35,13 @@
       "name": "Garden3D",
       "url": "https://garden3d.net",
       "logo": "/partners/garden3d.svg",
-      "include": false
+      "include": true
     },
     {
       "name": "DecentralPark",
       "url": "https://decentralpark.nyc",
       "logo": "/partners/decentralpark.svg",
-      "include": false
+      "include": true
     },
     {
       "name": "NYC Mesh",
