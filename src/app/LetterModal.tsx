@@ -25,17 +25,17 @@ function partnerNames(): string {
 
 const demands = [
   { label: "Build a Public Internet" },
-  { label: "Free Internet for All", href: "https://internetforall.nyc/" },
-  { label: "City-Owned Payment Rails" },
-  { label: "Real-Time Housing Data" },
+  { label: "Setup City-owned Payment Rails" },
+  { label: "Host Real-time Housing Data" },
   { label: "Improve 311" },
   { label: "Curb AI Expansion" },
-  { label: "Public Comments on Every Bill" },
-  { label: "Real-Time Budget Tracking" },
-  { label: "Office of AI Accountability" },
-  { label: "Opt Out of Biometric Surveillance" },
-  { label: "Regulate Self-Driving Taxis" },
-  { label: "Food Rescue Platform" },
+  { label: "Provide Free Internet for All", href: "https://internetforall.nyc/" },
+  { label: "Add Public Comments on City Bills" },
+  { label: "Install Live Budget Tracking" },
+  { label: "Establish Office of AI Accountability" },
+  { label: "Offer Opt Out to Biometric Surveillance" },
+  { label: "Regulate Self-driving Taxis" },
+  { label: "Run a Food Rescue Platform" },
 ];
 
 type Mode = "letter" | "form" | "submitted";
