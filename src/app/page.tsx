@@ -2,13 +2,10 @@ import Link from "next/link";
 
 import partnersData from "@/data/partners.json";
 import sliderData from "@/data/slider.json";
-import { loadInlineSvg } from "@/lib/inline-svg";
 import FitText from "./FitText";
 import Nav from "./Nav";
 import PartnersStrip from "./PartnersStrip";
 import Signatures from "./Signatures";
-
-const weCanHelpSvg = loadInlineSvg("/assets/we-can-help-big.svg");
 
 function partnerLinks(): React.ReactNode {
   const ps = partnersData.partners.filter(
@@ -202,17 +199,17 @@ export default function Home() {
               <ol className="mt-3 space-y-2 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:mt-4 md:text-[25pt] md:leading-[28pt]">
                 {[
                   { label: "Build a Public Internet" },
-                  { label: "Free Internet for All", href: "https://internetforall.nyc/" },
-                  { label: "City-Owned Payment Rails" },
-                  { label: "Real-Time Housing Data" },
+                  { label: "Setup City-owned Payment Rails" },
+                  { label: "Host Real-time Housing Data" },
                   { label: "Improve 311" },
                   { label: "Curb AI Expansion" },
-                  { label: "Public Comments on Every Bill" },
-                  { label: "Real-Time Budget Tracking" },
-                  { label: "Office of AI Accountability" },
-                  { label: "Opt Out of Biometric Surveillance" },
-                  { label: "Regulate Self-Driving Taxis" },
-                  { label: "Food Rescue Platform" },
+                  { label: "Provide Free Internet for All", href: "https://internetforall.nyc/" },
+                  { label: "Add Public Comments on City Bills" },
+                  { label: "Install Live Budget Tracking" },
+                  { label: "Establish Office of AI Accountability" },
+                  { label: "Offer Opt Out to Biometric Surveillance" },
+                  { label: "Regulate Self-driving Taxis" },
+                  { label: "Run a Food Rescue Platform" },
                 ].map((item, i) => (
                   <li key={item.label} className="flex items-center gap-3">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-sm text-white">
@@ -264,21 +261,13 @@ export default function Home() {
 
       <section className="bg-black text-brand-yellow">
         <div className="mx-auto w-full max-w-[1200px] px-6 py-10 text-center">
-          {weCanHelpSvg ? (
-            <span
-              aria-label="We can help"
-              className="block w-full [&>svg]:block [&>svg]:w-full"
-              dangerouslySetInnerHTML={{ __html: weCanHelpSvg }}
-            />
-          ) : (
-            <img
-              src="/assets/we-can-help-big.svg"
-              alt="We can help"
-              className="block w-full"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
+          <img
+            src="/assets/we-can-help-big.svg"
+            alt="We can help"
+            className="block w-full"
+            loading="lazy"
+            decoding="async"
+          />
           <FitText className="block font-display font-black leading-none tracking-tight">
             <a href="mailto:hello@heymamdani.nyc" className="underline">
               HELLO@HEYMAMDANI.NYC
