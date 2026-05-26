@@ -4,7 +4,7 @@
       "name": "Mozilla Foundation",
       "url": "https://foundation.mozilla.org",
       "logo": "/partners/mozilla-foundation.svg",
-      "include": false
+      "include": true
     },
     {
       "name": "Polis",
