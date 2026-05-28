@@ -9,9 +9,9 @@ import Signatures from "./Signatures";
 
 function partnerLinks(): React.ReactNode {
   const ps = partnersData.partners.filter(
-    (p) => "include" in p && p.include === true,
+    (p) => "participant" in p && p.participant === true,
   );
-  if (ps.length === 0) return "PARTNERS WILL BE LISTED HERE";
+  if (ps.length === 0) return "PARTICIPANTS WILL BE LISTED HERE";
   return ps.map((p, i) => {
     const sep =
       i === 0 ? "" : i === ps.length - 1 ? " and " : ", ";
@@ -207,7 +207,7 @@ export default function Home() {
                   { label: "Add Public Comments on City Bills" },
                   { label: "Install Live Budget Tracking" },
                   { label: "Establish Office of AI Accountability" },
-                  { label: "Offer Opt Out to Biometric Surveillance" },
+                  { label: "Offer Opt-Out to Biometric Surveillance" },
                   { label: "Regulate Self-driving Taxis" },
                   { label: "Run a Food Rescue Platform" },
                 ].map((item, i) => (
@@ -248,13 +248,40 @@ export default function Home() {
             >
               Open Assembly: A Prompt Towards Civic Engagement
             </a>{" "}
-            held at Index Greenpoint on March 10th, 2026, co-presented with a
-            committee of leading organizations in the civic technology field
-            including {partnerLinks()}.
+            held at Index Greenpoint on March 10th, 2026.
+          </p>
+          <p className="mx-auto mt-4 max-w-[1100px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
+            We gathered over 100 local NY technologist &amp; experts -
+            including participants from leading organizations in the civic
+            technology field including {partnerLinks()} - to dream up what a
+            tech-enabled NYC looks like.
           </p>
 
           <div className="mx-auto mt-8 flex aspect-video w-full max-w-[1100px] items-center justify-center bg-black text-white/70">
             VIDEO
+          </div>
+
+          <h2 className="mx-auto mt-10 max-w-[1100px] text-left text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl">
+            About Us:
+          </h2>
+          <div className="mx-auto mt-6 grid max-w-[1100px] grid-cols-1 gap-6 text-left md:grid-cols-2">
+            {partnersData.partners
+              .filter((p): p is typeof p & { description: string } => p.partner === true && "description" in p && !!p.description)
+              .map((p) => (
+                <div key={p.name}>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter underline"
+                  >
+                    {p.name}
+                  </a>
+                  <p className="mt-1 font-serif text-[18pt] leading-[22pt] tracking-tighter">
+                    {p.description}
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
       </section>

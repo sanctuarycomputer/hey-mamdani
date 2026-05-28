@@ -9,9 +9,9 @@ import FitText from "./FitText";
 // Plain-text comma-and list of partner names (no links inside the letter).
 function partnerNames(): string {
   const ps = partnersData.partners.filter(
-    (p) => "include" in p && p.include === true,
+    (p) => "participant" in p && p.participant === true,
   );
-  if (ps.length === 0) return "PARTNERS WILL BE LISTED HERE";
+  if (ps.length === 0) return "PARTICIPANTS WILL BE LISTED HERE";
   if (ps.length === 1) return ps[0].name;
   return (
     ps
@@ -33,7 +33,7 @@ const demands = [
   { label: "Add Public Comments on City Bills" },
   { label: "Install Live Budget Tracking" },
   { label: "Establish Office of AI Accountability" },
-  { label: "Offer Opt Out to Biometric Surveillance" },
+  { label: "Offer Opt-Out to Biometric Surveillance" },
   { label: "Regulate Self-driving Taxis" },
   { label: "Run a Food Rescue Platform" },
 ];
@@ -196,9 +196,13 @@ function LetterModalInner() {
                 <em className="italic">
                   Open Assembly: A Prompt Towards Civic Engagement
                 </em>{" "}
-                held at Index Greenpoint on March 10th, 2026, co-presented
-                with a committee of leading organizations in the civic
-                technology field including {partnerNames()}.
+                held at Index Greenpoint on March 10th, 2026.
+              </p>
+              <p className="mt-4 font-serif text-base leading-snug">
+                We gathered over 100 local NY technologist &amp; experts -
+                including participants from leading organizations in the civic
+                technology field including {partnerNames()} - to dream up what
+                a tech-enabled NYC looks like.
               </p>
 
               <h2 className="mt-8 font-serif text-4xl font-bold leading-[1.05] tracking-tighter md:text-5xl">

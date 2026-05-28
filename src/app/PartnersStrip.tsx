@@ -7,7 +7,7 @@ export default function PartnersStrip({
   className?: string;
 }) {
   const visiblePartners = partnersData.partners.filter(
-    (p) => "include" in p && p.include === true,
+    (p) => "partner" in p && p.partner === true,
   );
 
   if (visiblePartners.length === 0) {
