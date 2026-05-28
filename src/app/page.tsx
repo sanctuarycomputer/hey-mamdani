@@ -251,10 +251,9 @@ export default function Home() {
             held at Index Greenpoint on March 10th, 2026.
           </p>
           <p className="mx-auto mt-4 max-w-[1100px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
-            We gathered over 100 local NY technologist &amp; experts -
-            including participants from leading organizations in the civic
-            technology field including {partnerLinks()} - to dream up what a
-            tech-enabled NYC looks like.
+            We gathered 100 local technologists &amp; experts from leading
+            organizations in the civic technology field including{" "}
+            {partnerLinks()} to dream up what a tech-enabled NYC looks like.
           </p>
 
           <div className="mx-auto mt-8 flex aspect-video w-full max-w-[1100px] items-center justify-center bg-black text-white/70">
@@ -262,7 +261,7 @@ export default function Home() {
           </div>
 
           <h2 className="mx-auto mt-10 max-w-[1100px] text-left text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl">
-            About Us:
+            Our Coalition Includes:
           </h2>
           <div className="mx-auto mt-6 grid max-w-[1100px] grid-cols-1 gap-6 text-left md:grid-cols-2">
             {partnersData.partners

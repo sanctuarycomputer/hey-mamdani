@@ -199,10 +199,10 @@ function LetterModalInner() {
                 held at Index Greenpoint on March 10th, 2026.
               </p>
               <p className="mt-4 font-serif text-base leading-snug">
-                We gathered over 100 local NY technologist &amp; experts -
-                including participants from leading organizations in the civic
-                technology field including {partnerNames()} - to dream up what
-                a tech-enabled NYC looks like.
+                We gathered 100 local technologists &amp; experts from leading
+                organizations in the civic technology field including{" "}
+                {partnerNames()} to dream up what a tech-enabled NYC looks
+                like.
               </p>
 
               <h2 className="mt-8 font-serif text-4xl font-bold leading-[1.05] tracking-tighter md:text-5xl">

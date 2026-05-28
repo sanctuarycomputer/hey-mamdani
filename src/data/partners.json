@@ -6,6 +6,14 @@
       "logo": "/partners/mozilla-foundation.svg",
       "description": "The Mozilla Foundation is a global nonprofit dedicated to building a people-centered internet that is open, accessible, and shaped by community, fueling open-source technology, advocacy, education, and tools that put users before profit.",
       "partner": true,
+      "participant": false
+    },
+    {
+      "name": "RadicalxChange",
+      "url": "https://www.radicalxchange.org",
+      "logo": "/partners/radicalxchange.svg",
+      "description": "RadicalxChange is a global movement working across political, technological, and cultural domains to build more participatory and pluralistic systems, empowering communities with tools and frameworks to decentralize power, strengthen collective action, and imagine practical alternatives to extractive and authoritarian models.",
+      "partner": true,
       "participant": true
     },
     {
@@ -17,12 +25,20 @@
       "participant": true
     },
     {
-      "name": "RadicalxChange",
-      "url": "https://www.radicalxchange.org",
-      "logo": "/partners/radicalxchange.svg",
-      "description": "RadicalxChange is a global movement working across political, technological, and cultural domains to build more participatory and pluralistic systems, empowering communities with tools and frameworks to decentralize power, strengthen collective action, and imagine practical alternatives to extractive and authoritarian models.",
+      "name": "Decentral Park",
+      "url": "https://decentralpark.nyc",
+      "logo": "/partners/decentralpark.svg",
+      "description": "Decentral Park is a NYC-based progressive tech collective convening organizers, professionals, and civic stakeholders to advance cooperative economics and implement civic tools.",
       "partner": true,
       "participant": true
+    },
+    {
+      "name": "garden3d",
+      "url": "https://garden3d.net",
+      "logo": "/partners/garden3d.svg",
+      "description": "garden3d is a worker-owned creative collective, innovating on everything from brands and IRL communities to IoT devices and cross platform apps.",
+      "partner": true,
+      "participant": false
     },
     {
       "name": "Metagov",
@@ -37,23 +53,7 @@
       "logo": "/partners/new-public.svg",
       "scale": 0.7,
       "partner": false,
-      "participant": true
-    },
-    {
-      "name": "Garden3D",
-      "url": "https://garden3d.net",
-      "logo": "/partners/garden3d.svg",
-      "description": "garden3d is a worker-owned creative collective, innovating on everything from brands and IRL communities to IoT devices and cross platform apps.",
-      "partner": true,
-      "participant": true
-    },
-    {
-      "name": "DecentralPark",
-      "url": "https://decentralpark.nyc",
-      "logo": "/partners/decentralpark.svg",
-      "description": "Decentral Park is a NYC-based progressive tech collective convening organizers, professionals, and civic stakeholders to advance cooperative economics and implement civic tools.",
-      "partner": true,
-      "participant": true
+      "participant": false
     },
     {
       "name": "NYC Mesh",
