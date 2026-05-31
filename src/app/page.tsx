@@ -207,7 +207,7 @@ export default function Home() {
                   { label: "Add Public Comments on City Bills" },
                   { label: "Install Live Budget Tracking" },
                   { label: "Establish Office of AI Accountability" },
-                  { label: "Offer Opt-Out to Biometric Surveillance" },
+                  { label: "Opt-In to Biometric Surveillance" },
                   { label: "Regulate Self-driving Taxis" },
                   { label: "Run a Food Rescue Platform" },
                 ].map((item, i) => (
@@ -236,7 +236,7 @@ export default function Home() {
       </section>
 
       <section className="bg-brand-yellow text-black">
-        <div className="mx-auto w-full max-w-[1200px] px-6 py-10 text-center">
+        <div className="mx-auto w-full max-w-[1200px] px-6 pt-10 text-center">
           <p className="mx-auto max-w-[1100px] font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter">
             These recommendations came out of an open-format participatory
             event called{" "}
@@ -263,25 +263,38 @@ export default function Home() {
           <h2 className="mx-auto mt-10 max-w-[1100px] text-left text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl">
             Our Coalition Includes:
           </h2>
-          <div className="mx-auto mt-6 grid max-w-[1100px] grid-cols-1 gap-6 text-left md:grid-cols-2">
-            {partnersData.partners
-              .filter((p): p is typeof p & { description: string } => p.partner === true && "description" in p && !!p.description)
-              .map((p) => (
-                <div key={p.name}>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-serif text-[18pt] font-bold leading-[22pt] tracking-tighter underline"
-                  >
-                    {p.name}
-                  </a>
-                  <p className="mt-1 font-serif text-[18pt] leading-[22pt] tracking-tighter">
-                    {p.description}
-                  </p>
+        </div>
+
+        <div className="mt-6 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-10 [padding-inline:max(1.5rem,calc((100vw-1100px)/2))] [scroll-padding-inline-start:max(1.5rem,calc((100vw-1100px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {partnersData.partners
+            .filter(
+              (p): p is typeof p & { description: string } =>
+                p.partner === true && "description" in p && !!p.description,
+            )
+            .map((p, i) => (
+              <div
+                key={p.name}
+                className="flex w-[85vw] max-w-[400px] shrink-0 snap-start flex-col border-8 border-black bg-white p-5 text-brand-yellow md:p-6"
+              >
+                <div className="text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:text-[25pt] md:leading-[28pt]">
+                  {String(i + 1).padStart(2, "0")}
                 </div>
-              ))}
-          </div>
+                <div className="mb-3 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:text-[25pt] md:leading-[28pt]">
+                  {p.name}
+                </div>
+                <p className="text-base font-bold leading-snug tracking-[-0.04em] md:text-lg">
+                  {p.description}
+                </p>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto pt-4 text-sm underline"
+                >
+                  Visit {"↗︎"}
+                </a>
+              </div>
+            ))}
         </div>
       </section>
 

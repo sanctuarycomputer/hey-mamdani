@@ -33,7 +33,7 @@ const demands = [
   { label: "Add Public Comments on City Bills" },
   { label: "Install Live Budget Tracking" },
   { label: "Establish Office of AI Accountability" },
-  { label: "Offer Opt-Out to Biometric Surveillance" },
+  { label: "Opt-In to Biometric Surveillance" },
   { label: "Regulate Self-driving Taxis" },
   { label: "Run a Food Rescue Platform" },
 ];
