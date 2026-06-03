@@ -25,9 +25,18 @@
       "participant": true
     },
     {
+      "name": "Metagov",
+      "url": "https://metagov.org",
+      "logo": "/partners/metagov.svg",
+      "description": "Metagov is a community of research and practice gathered around the mission to cultivate tools, practices, and communities that enable self-governance in the digital age.",
+      "partner": true,
+      "participant": true
+    },
+    {
       "name": "Decentral Park",
       "url": "https://decentralpark.nyc",
       "logo": "/partners/decentralpark.svg",
+      "scale": 2.0,
       "description": "Decentral Park is a NYC-based progressive tech collective convening organizers, professionals, and civic stakeholders to advance cooperative economics and implement civic tools.",
       "partner": true,
       "participant": true
@@ -39,13 +48,6 @@
       "description": "garden3d is a worker-owned creative collective, innovating on everything from brands and IRL communities to IoT devices and cross platform apps.",
       "partner": true,
       "participant": false
-    },
-    {
-      "name": "Metagov",
-      "url": "https://metagov.org",
-      "logo": "/partners/metagov.svg",
-      "partner": false,
-      "participant": true
     },
     {
       "name": "New_ Public",
