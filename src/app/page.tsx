@@ -228,7 +228,7 @@ export default function Home() {
                   { label: "Add Public Comments on City Bills" },
                   { label: "Install Live Budget Tracking" },
                   { label: "Establish Office of AI Accountability" },
-                  { label: "Opt-In to Biometric Surveillance" },
+                  { label: "Offer Opt-out to Biometric Surveillance" },
                   { label: "Regulate Self-driving Taxis" },
                   { label: "Run a Food Rescue Platform" },
                 ].map((item, i) => (
@@ -277,8 +277,15 @@ export default function Home() {
             {partnerLinks()} to dream up what a tech-enabled NYC looks like.
           </p>
 
-          <div className="mx-auto mt-8 flex aspect-video w-full max-w-[1100px] items-center justify-center bg-black text-white/70">
-            VIDEO
+          <div className="mx-auto mt-8 aspect-video w-full max-w-[1100px] overflow-hidden bg-black">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/P4WDFfdlbzA"
+              title="Hey Mamdani"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
 
           <h2 className="mx-auto mt-10 max-w-[1100px] text-left text-5xl font-bold leading-none tracking-[-0.04em] md:text-6xl">

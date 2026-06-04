@@ -33,7 +33,7 @@ const demands = [
   { label: "Add Public Comments on City Bills" },
   { label: "Install Live Budget Tracking" },
   { label: "Establish Office of AI Accountability" },
-  { label: "Opt-In to Biometric Surveillance" },
+  { label: "Offer Opt-out to Biometric Surveillance" },
   { label: "Regulate Self-driving Taxis" },
   { label: "Run a Food Rescue Platform" },
 ];
@@ -130,7 +130,7 @@ function LetterModalInner() {
       }}
     >
       <div
-        className="relative mx-auto flex h-full w-full max-w-[640px] flex-col overflow-hidden border-8 border-brand-navy bg-white md:h-[calc(100dvh-4rem)]"
+        className="relative mx-auto flex h-full w-full min-w-0 max-w-[640px] flex-col overflow-hidden border-8 border-brand-navy bg-white md:h-[calc(100dvh-4rem)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close (X) — form mode steps back to the letter; letter and submitted dismiss the modal. */}
