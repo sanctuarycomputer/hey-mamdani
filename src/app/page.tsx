@@ -280,7 +280,7 @@ export default function Home() {
           <div className="mx-auto mt-8 aspect-video w-full max-w-[1100px] overflow-hidden bg-black">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/P4WDFfdlbzA"
+              src="https://www.youtube.com/embed/wZuBbdALY0k"
               title="Hey Mamdani"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
