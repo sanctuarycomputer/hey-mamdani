@@ -47,10 +47,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-brand-yellow text-black">
-        <div className="mx-auto flex w-full max-w-[1200px] items-stretch justify-between gap-4 px-6 pt-6 md:gap-10 md:pt-8">
+      <section className="overflow-hidden bg-brand-yellow text-black">
+        <div className="mx-auto flex w-full max-w-[1200px] items-stretch justify-between gap-2 px-6 pt-6 md:gap-10 md:pt-8">
           <div className="flex items-center pb-6 md:pb-8">
-            <p className="font-serif text-3xl font-bold leading-[1.05] tracking-[-0.06em] md:text-5xl lg:text-6xl">
+            <p className="font-serif text-4xl font-bold leading-[1.05] tracking-[-0.06em] md:text-5xl lg:text-6xl">
               &ldquo;Working New Yorkers know what they need{" "}
               <span className="whitespace-nowrap">to thrive&rdquo;</span>
               <span className="mt-2 block font-serif text-lg italic tracking-[-0.06em] md:mt-3 md:text-2xl lg:text-3xl">
@@ -62,7 +62,7 @@ export default function Home() {
             src="/assets/portrait.svg"
             alt=""
             aria-hidden
-            className="h-44 w-auto shrink-0 self-end sm:h-56 md:h-72 lg:h-96"
+            className="-mr-24 h-72 w-auto shrink-0 self-end sm:-mr-16 sm:h-72 md:mr-0 md:h-72 lg:h-96"
             loading="lazy"
             decoding="async"
           />
@@ -218,20 +218,20 @@ export default function Home() {
                 NYC Should&hellip;
               </h2>
               <ol className="mt-3 space-y-2 text-[18pt] font-bold leading-[22pt] tracking-[-0.04em] md:mt-4 md:text-[25pt] md:leading-[28pt]">
-                {[
+                {([
                   { label: "Build a Public Internet" },
                   { label: "Setup City-owned Payment Rails" },
                   { label: "Host Real-time Housing Data" },
                   { label: "Improve 311" },
                   { label: "Curb AI Expansion" },
-                  { label: "Provide Free Internet for All", href: "https://internetforall.nyc/" },
+                  { label: "Provide Free Internet for All" },
                   { label: "Add Public Comments on City Bills" },
                   { label: "Install Live Budget Tracking" },
                   { label: "Establish Office of AI Accountability" },
                   { label: "Offer Opt-out to Biometric Surveillance" },
                   { label: "Regulate Self-driving Taxis" },
                   { label: "Run a Food Rescue Platform" },
-                ].map((item, i) => (
+                ] as { label: string; href?: string }[]).map((item, i) => (
                   <li key={item.label} className="flex items-start gap-3">
                     <span className="mt-[0.15em] flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-sm text-white">
                       {i + 1}
@@ -280,7 +280,7 @@ export default function Home() {
           <div className="mx-auto mt-8 aspect-video w-full max-w-[1100px] overflow-hidden bg-black">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/wZuBbdALY0k"
+              src="https://www.youtube.com/embed/hWFXjJp-JHQ"
               title="Hey Mamdani"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
