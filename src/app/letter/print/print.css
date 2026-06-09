@@ -1,0 +1,101 @@
+/* Loaded only by the /letter/print route. Controls the printed page geometry
+   for PDF generation (scripts/generate-letter-pdf.mjs drives headless Chrome
+   against this route) AND the print-only single-page sizing tweaks. None of
+   these rules touch the on-site letter modal: that lives on the homepage,
+   which never loads this stylesheet and has no .letter-print wrapper. */
+
+@page {
+  size: 8.5in 11in; /* US Letter, portrait */
+  margin: 0.3in;
+}
+
+/* The root layout paints the page navy; for paper / PDF output we want a white
+   sheet, and we want the navy numbered circles to actually render. */
+html,
+body {
+  background: #fff !important;
+}
+
+.letter-print,
+.letter-print * {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Thick blue frame around the whole letter, sized to fill exactly one page so
+   the partner footer can pin to the bottom. 10.4in = 11in page - 0.3in top/
+   bottom @page margins; box-sizing is border-box so the border/padding count. */
+.letter-print {
+  display: flex;
+  flex-direction: column;
+  min-height: 10.15in;
+  border: 10px solid var(--color-brand-navy);
+  padding: 0.4in 0.45in;
+}
+
+/* Push the partner footer to the bottom of the page. */
+.letter-print .letter-footer {
+  margin-top: auto;
+}
+
+/* Left-align the partner logos (PartnersStrip centers by default for the
+   website; override print-only). */
+.letter-print .letter-footer > div {
+  justify-content: flex-start;
+}
+
+/* --- Single-page fit (print only) --- */
+
+/* Tighten the vertical rhythm between sections. */
+.letter-print .mt-8 {
+  margin-top: 0.6rem;
+}
+.letter-print .mt-6 {
+  margin-top: 0.55rem;
+}
+.letter-print .mt-4 {
+  margin-top: 0.5rem;
+}
+.letter-print .mt-1 {
+  margin-top: 0.1rem;
+}
+.letter-print .pb-4 {
+  padding-bottom: 0;
+}
+
+/* Trim the large display type a notch so the closing block fits the page.
+   Proportional, so the letter stays balanced. */
+.letter-print .text-5xl {
+  font-size: 2.25rem;
+}
+.letter-print .text-4xl {
+  font-size: 1.75rem;
+}
+
+/* Smaller sign-off apple. */
+.letter-print img {
+  height: 2.75rem;
+}
+
+/* Body serif text: ~1px smaller with slightly tighter leading. */
+.letter-print p.text-base {
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+/* Recommendations: smaller type, sized to the circles, tighter spacing. */
+.letter-print ol {
+  font-size: 13px;
+  line-height: 1.2;
+}
+.letter-print ol > li {
+  gap: 0.5rem;
+}
+.letter-print ol > li + li {
+  margin-top: 0.2rem;
+}
+.letter-print ol > li > span {
+  height: 1.15rem;
+  width: 1.15rem;
+  font-size: 11px;
+}

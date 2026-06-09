@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "letter:pdf": "node scripts/generate-letter-pdf.mjs"
   },
   "dependencies": {
     "fitty": "^2.4.2",
