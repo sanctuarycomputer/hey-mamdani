@@ -224,7 +224,7 @@ export default function Home() {
                   { label: "Host Real-time Housing Data" },
                   { label: "Improve 311" },
                   { label: "Curb AI Expansion" },
-                  { label: "Provide Free Internet for All" },
+                  { label: "Provide Free Internet for All", href: "https://internetforall.nyc/" },
                   { label: "Add Public Comments on City Bills" },
                   { label: "Install Live Budget Tracking" },
                   { label: "Establish Office of AI Accountability" },
@@ -280,7 +280,7 @@ export default function Home() {
           <div className="mx-auto mt-8 aspect-video w-full max-w-[1100px] overflow-hidden bg-black">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/hWFXjJp-JHQ"
+              src="https://www.youtube.com/embed/m7XwOxExLnc"
               title="Hey Mamdani"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
